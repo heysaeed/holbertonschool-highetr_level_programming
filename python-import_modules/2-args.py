@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 def main():
     num_args = len(sys.argv) - 1
     if (num_args == 0):
@@ -12,6 +13,6 @@ def main():
     for arg in range(1, len(sys.argv)):
         print("{}: {}".format(arg, sys.argv[arg]))
 
+
 if __name__ == "__main__":
     main()
-
