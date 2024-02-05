@@ -60,15 +60,15 @@ class Square:
         """
         print a square of self.__size with #
         """
-        if self.__size == 0:
+        if self.size == 0:
             print()
         else:
-            for space in range(self.__position[1]):
+            for space in range(self.position[1]):
                 print()
-            for x in range(self.__size):
-                for space in range(self.__position[0]):
+            for x in range(self.size):
+                for space in range(self.position[0]):
                     print(" ", end="")
-                for y in range(self.__size):
+                for y in range(self.size):
                     print("#", end="")
                 print()
 
