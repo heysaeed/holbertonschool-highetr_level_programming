@@ -14,6 +14,7 @@ class Square:
         initialize a square
         Args:
             size (int, optional): size of the square. Defaults to 0.
+            position(tuple(int, int), optional): position of the square
         Raises:
                 TypeError: size must be an integer
                 ValueError: size must be >=0
@@ -81,6 +82,14 @@ class Square:
 
     @position.setter
     def position(self, value):
+        """
+
+        Args:
+            value (tuple(int)): number of spaces to print
+
+        Raises:
+            TypeError: position must be a tuple of 2 positive integers
+        """
         if not (isinstance(value, tuple) and len(value) == 2
                 and all(isinstance(x, int) and x >= 0 for x in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
