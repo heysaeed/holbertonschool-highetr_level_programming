@@ -75,7 +75,7 @@ class Square:
     def position(self):
         """
         Returns:
-            tuple(int): position the square should be printed on output 
+            tuple(int): position the square should be printed on output
         """
         return self.__position
 
