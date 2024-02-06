@@ -4,8 +4,8 @@ Module defines a Square class with attributes and methods to manipulate
 square properties.
 """
 
-class Square:
 
+class Square:
 
     """
     A class that represents a square.
