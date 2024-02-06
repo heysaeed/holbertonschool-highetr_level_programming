@@ -5,6 +5,7 @@ square properties.
 """
 
 class Square:
+
     """
     A class that represents a square.
 
@@ -29,7 +30,7 @@ class Square:
         Initialize a new Square instance.
 
         Args:
-            size (int, optional): The size of the square's side. 
+            size (int, optional): The size of the square's side.
             Defaults to 0.
             position (tuple of int, optional): The x, y coordinates where
             the square will be printed. Defaults to (0, 0).
