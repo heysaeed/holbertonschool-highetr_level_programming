@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Module defines a Square class with attributes and methods to manipulate square properties.
+Module defines a Square class with attributes and methods to manipulate
+square properties.
 """
 
 class Square:
@@ -9,10 +10,12 @@ class Square:
 
     Attributes:
         __size (int): The size of a side of the square.
-        __position (tuple of int): The x, y position of the square when printed.
+        __position (tuple of int): The x, y position of the square when
+        printed.
 
     Methods:
-        __init__(self, size=0, position=(0, 0)): Initializes a new Square.
+        __init__(self, size=0, position=(0, 0)): Initializes a new
+        Square.
         area(self): Calculates the area of the square.
         size(self): Gets the current square size.
         size(self, value): Sets the size of the square.
@@ -26,8 +29,10 @@ class Square:
         Initialize a new Square instance.
 
         Args:
-            size (int, optional): The size of the square's side. Defaults to 0.
-            position (tuple of int, optional): The x, y coordinates where the square will be printed. Defaults to (0, 0).
+            size (int, optional): The size of the square's side. 
+            Defaults to 0.
+            position (tuple of int, optional): The x, y coordinates where
+            the square will be printed. Defaults to (0, 0).
 
         Raises:
             TypeError: If 'size' is not an integer.
@@ -79,7 +84,8 @@ class Square:
 
     def my_print(self):
         """
-        Print the square with the character '#' to the console, using the position attribute to offset it.
+        Print the square with the character '#' to the console, using the
+        position attribute to offset it.
         """
         if self.__size == 0:
             print()
@@ -109,6 +115,7 @@ class Square:
         Raises:
             TypeError: If 'value' is not a tuple of 2 positive integers.
         """
-        if not (isinstance(value, tuple) and len(value) == 2 and all(isinstance(x, int) and x >= 0 for x in value)):
+        if not (isinstance(value, tuple) and len(value) == 2
+                and all(isinstance(x, int) and x >= 0 for x in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
