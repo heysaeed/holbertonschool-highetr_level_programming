@@ -6,6 +6,7 @@ square properties.
 
 class Square:
 
+
     """
     A class that represents a square.
 
