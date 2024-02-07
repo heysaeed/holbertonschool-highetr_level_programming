@@ -95,5 +95,5 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         rectangle_print = ('#' * self.__width + '\n')\
-        * (self.__height - 1) + ('#' * self.__width)
+            * (self.__height - 1) + ('#' * self.__width)
         return rectangle_print
