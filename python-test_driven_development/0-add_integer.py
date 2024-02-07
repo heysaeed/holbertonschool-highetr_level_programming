@@ -2,18 +2,14 @@
 
 """
 Module for addition
+Add two integers
+Cast float into ints
 """
 
 
 def add_integer(a, b=98):
     """add two integers
-
-    Args:
-            a (int): first int
-            b (int, optional): second int. Defaults to 98.
-
-    Returns:
-            int: sum
+    Returns: sum (int)
     """
     if isinstance(a, float):
         a = int(a)
