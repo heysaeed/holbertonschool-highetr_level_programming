@@ -7,6 +7,7 @@ Define a Rectangle class
 class Rectangle:
     """Define the rectangle attribute"""
     number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """
         initialisation of the rectangle
@@ -18,7 +19,6 @@ class Rectangle:
         self.__height = height
         self.__width = width
         Rectangle.number_of_instances += 1
-
 
     @property
     def width(self):

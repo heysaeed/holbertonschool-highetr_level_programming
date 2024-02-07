@@ -8,6 +8,7 @@ class Rectangle:
     """Define the rectangle attribute"""
     number_of_instances = 0
     print_symbol = '#'
+
     def __init__(self, width=0, height=0):
         """
         initialisation of the rectangle
@@ -19,7 +20,6 @@ class Rectangle:
         self.__height = height
         self.__width = width
         Rectangle.number_of_instances += 1
-
 
     @property
     def width(self):
@@ -99,7 +99,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         rectangle_print = (str(self.print_symbol) * self.__width + '\n') * \
-            (self.__height - 1) + (str(self.print_symbol )* self.__width)
+            (self.__height - 1) + (str(self.print_symbol) * self.__width)
         return rectangle_print
 
     def __repr__(self):
