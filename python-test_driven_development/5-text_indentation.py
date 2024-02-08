@@ -2,6 +2,7 @@
 """indent text fter . : ?
 """
 
+
 def text_indentation(text):
     """indent text after certain character
 
