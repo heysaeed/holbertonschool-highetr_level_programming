@@ -1,6 +1,16 @@
 #!/usr/bin/python3
+"""indent text fter . : ?
+"""
 
 def text_indentation(text):
+    """indent text after certain character
+
+    Args:
+        text (str): text to indent
+
+    Raises:
+        TypeError: text is notr a string
+    """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
