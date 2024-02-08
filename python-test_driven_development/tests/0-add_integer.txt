@@ -31,3 +31,7 @@ TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
 >>> add_integer(float('nan'), 5)
 Traceback (most recent call last):
 ValueError: cannot convert float NaN to integer
+
+>>> add_integer(float('inf'), 5)
+Traceback (most recent call last):
+ValueError: cannot convert float infinity to integer
