@@ -9,6 +9,7 @@ class Rectangle(BaseGeometry):
     Args:
         BaseGeometry (class)
     """
+
     def __init__(self, width, height):
         self.integer_validator("width", width)
         self.__width = width
