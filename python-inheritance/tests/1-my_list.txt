@@ -9,3 +9,19 @@
 
 >>> my_list.print_sorted()
 [1, 2, 4]
+
+>>> my_list.append(0)
+>>> print(my_list)
+[1, 4, 2, 0]
+
+>>> my_list.append(0)
+>>> my_list.print_sorted()
+[0, 0, 1, 2, 4]
+
+>>> my_list.append(-5)
+>>> print(my_list)
+[1, 4, 2, 0, 0, -5]
+
+>>> my_list.print_sorted()
+[-5, 0, 0, 1, 2, 4]
+
