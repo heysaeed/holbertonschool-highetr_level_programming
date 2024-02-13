@@ -1,4 +1,13 @@
 #!/usr/bin/python3
+"""Add items to a list stored in a JSON file.
+
+This script appends command-line arguments to a list stored in 'add_item.json'.
+If the file does not exist, it creates a new list. It uses external functions
+for loading from and saving to JSON files.
+
+Usage:
+    ./script_name arg1 arg2 ...
+"""
 import sys
 
 save_file = __import__('5-save_to_json_file').save_to_json_file
