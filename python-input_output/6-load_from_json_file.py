@@ -6,7 +6,8 @@ import json
 def load_from_json_file(filename):
     """Deserializes a JSON file to a Python object.
 
-    Opens a file, reads the JSON string from it, and converts it into a Python object.
+    Opens a file, reads the JSON string from it, and converts it into
+    a Python object.
 
     Args:
         filename (str): The name of the file containing the JSON string.

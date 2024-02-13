@@ -9,7 +9,8 @@ def pascal_triangle(n):
         n (int): The number of levels to generate in the triangle.
 
     Returns:
-        list: A list of lists, where each sublist represents a level of Pascal's triangle.
+        list: A list of lists, where each sublist represents a
+        level of Pascal's triangle.
     """
     triangle = []
     if n <= 0:

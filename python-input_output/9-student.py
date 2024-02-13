@@ -14,7 +14,6 @@ class Student:
         to_json: Returns the dictionary representation of the instance.
     """
 
-
     def __init__(self, first_name, last_name, age):
         """Initializes a new Student instance.
 

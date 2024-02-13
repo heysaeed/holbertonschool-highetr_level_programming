@@ -14,7 +14,6 @@ class Student:
         to_json: Returns the dictionary representation of the instance.
     """
 
-
     def __init__(self, first_name, last_name, age):
         """Initializes a new Student instance.
 
@@ -39,7 +38,8 @@ class Student:
         Returns:
             dict: Serialized student data.
         """
-        if isinstance(attrs, list) and all(isinstance(item, str) for item in attrs):
+        if isinstance(attrs, list) and all(isinstance(item, str)
+                                           for item in attrs):
             sorted_dict = {key: value for key,
                            value in self.__dict__.items() if key in attrs}
             return sorted_dict
