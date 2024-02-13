@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Module for file reading operations."""
+
 
 def read_file(filename=""):
     """read a file and print its content
