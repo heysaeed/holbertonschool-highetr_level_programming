@@ -8,10 +8,8 @@ class MyList(list):
     """
     define attribute of Mylist
     Args:
-    list (int)
+    inherited class list
     """
-
-    list = []
 
     def print_sorted(self):
         """
