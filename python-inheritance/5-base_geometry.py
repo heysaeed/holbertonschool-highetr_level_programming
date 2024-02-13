@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-"""define a base geometry"""
+"""Module for BaseGeometry class."""
 
 
 class BaseGeometry:
-    """define base geometry attributes
-    """
+    """A base class for geometry objects."""
     pass
