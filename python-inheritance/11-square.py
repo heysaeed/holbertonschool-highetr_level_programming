@@ -37,12 +37,14 @@ class Square(Rectangle):
         return self.__size ** 2
 
     def __str__(self):
-        """Provides a string representation of the Square instance.
-
-        Overrides the object's default method to return the square's description,
-        including its size.
-
+        """
+        Returns the square's description, including its size.
+        
+        Overrides to provide a uniform string representation of the square,
+        detailing its dimensions as a Square.
+        
         Returns:
-            str: A string in the format "[Square] size/size".
+            A string representation of the square, indicating
+            its type and dimensions.
         """
         return "[Square] {}/{}".format(self.__size, self.__size)
