@@ -39,10 +39,10 @@ class Square(Rectangle):
     def __str__(self):
         """
         Returns the square's description, including its size.
-        
+
         Overrides to provide a uniform string representation of the square,
         detailing its dimensions as a Square.
-        
+
         Returns:
             A string representation of the square, indicating
             its type and dimensions.
