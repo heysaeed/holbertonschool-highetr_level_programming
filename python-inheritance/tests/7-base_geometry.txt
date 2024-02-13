@@ -28,3 +28,11 @@ TypeError: age must be an integer
 >>> bg.integer_validator("Name", None)
 Traceback (most recent call last):
 TypeError: Name must be an integer
+
+>>> bg.integer_validator("testing", float('nan'))
+Traceback (most recent call last):
+TypeError: testing must be an integer
+
+>>> bg.integer_validator("testing", float('inf'))
+Traceback (most recent call last):
+TypeError: testing must be an integer
