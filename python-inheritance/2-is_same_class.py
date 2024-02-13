@@ -3,6 +3,7 @@
 Define function is_same_class
 """
 
+
 def is_same_class(obj, a_class):
     """
     return True if object is exactly an instance
