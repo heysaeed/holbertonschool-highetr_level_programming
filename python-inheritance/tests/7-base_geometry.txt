@@ -1,6 +1,18 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
 
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> bg.area(5)
+Traceback (most recent call last):
+TypeError: area() takes 1 positional argument but 2 were given
+
+>>> bg.area(5, 5)
+Traceback (most recent call last):
+TypeError: area() takes 1 positional argument but 3 were given
+
 >>> bg.integer_validator("my_int", 12)
 
 >>> bg.integer_validator("width", 89)
