@@ -60,3 +60,7 @@ TypeError: integer_validator() missing 2 required positional arguments: 'name' a
 >>> bg.integer_validator("name", 1, 2)
 Traceback (most recent call last):
 TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+>>> bg.integer_validator({"a": 1}, (1, 2))
+Traceback (most recent call last):
+TypeError: {'a': 1} must be an integer
