@@ -70,7 +70,13 @@ Traceback (most recent call last):
 TypeError: {'a': 1} must be an integer
 
 >>> bg.integer_validator("test", [3])
+Traceback (most recent call last):
+TypeError: test must be an integer
 
 >>> bg.integer_validator("test", (5,))
+Traceback (most recent call last):
+TypeError: test must be an integer
 
 >>> bg.integer_validator("test", {1, 2})
+Traceback (most recent call last):
+TypeError: test must be an integer
