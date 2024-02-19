@@ -98,9 +98,13 @@ class Rectangle(Base):
                                                         self.__y, self.__width,
                                                         self.__height))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         attributes = ['id', 'width', 'height', 'x', 'y']
-        attributes_with_value = list(zip(attributes, args))
-
-        for attr, arg in attributes_with_value:
-            setattr(self, attr, arg)
+        if args and len(args) > 0:
+            attributes_with_value = list(zip(attributes, args))
+            for attr, arg in attributes_with_value:
+                setattr(self, attr, arg)
+        elif kwargs:
+            for key, value in kwargs.items():
+                if key in attributes:
+                    setattr(self, key, value)
