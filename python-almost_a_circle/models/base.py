@@ -27,3 +27,19 @@ class Base:
                 list_dicts.append(obj.to_dictionary())
         with open(filename, "w") as newfile:
             newfile.write(cls.to_json_string(list_dicts))
+
+    def from_json_string(json_string):
+        if not json_string:
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+        else:
+            raise Exception("Wrong class")
+        dummy.update(**dictionary)
+        return dummy
