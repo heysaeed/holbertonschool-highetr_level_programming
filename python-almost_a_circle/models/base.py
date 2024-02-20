@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import json
+import os
 
 class Base:
 
@@ -43,3 +44,20 @@ class Base:
             raise Exception("Wrong class")
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        filename = "{}.json".format(cls.__name__)
+        if not os.path.isfile(filename):
+            return []
+        
+        with open(filename, "r") as file:
+            file_read = file.read()
+            list_dicts = cls.from_json_string(file_read)
+
+        instances = []
+        for d in list_dicts:
+            instance = cls.create(**d)
+            instances.append(instance)
+
+        return instances
