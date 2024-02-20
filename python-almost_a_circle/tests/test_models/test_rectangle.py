@@ -28,7 +28,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_rectangle_value_error(self):
         with self.assertRaises(ValueError) as err:
-            rectange = Rectangle(-2, 1)
+            rectangle = Rectangle(-2, 1)
         self.assertEqual(str(err.exception), "width must be > 0")
 
     def test_rectangle_area(self):
