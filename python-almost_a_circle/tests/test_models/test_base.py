@@ -35,3 +35,23 @@ class TestBase(unittest.TestCase):
     def test_to_json_string_none(self):
         json_string = Base.to_json_string(None)
         self.assertEqual(json_string, [])
+
+    def test_from_json_string(self):
+        string = '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]'
+        json_list = Base.from_json_string(string)
+        self.assertTrue(isinstance(json_list, list))
+
+    def test_from_json_string_content(self):
+        string = '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]'
+        expected_list = [{'id': 1, 'width': 10, 'height': 7, 'x': 2, 'y': 8}]
+        json_list = Base.from_json_string(string)
+        self.assertEqual(json_list, expected_list)
+
+    def test_from_json_string_none(self):
+        json_list = Base.from_json_string(None)
+        self.assertEqual(json_list, [])
+
+    def test_create_error(self):
+        with self.assertRaises(Exception) as err:
+            Base.create()
+        self.assertEqual(str(err.exception), "Wrong class") # change error msg to your own
