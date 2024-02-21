@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 import unittest
+import sys
+from io import StringIO
 from models.rectangle import Rectangle
 
 """Change order of attribute according to your own"""
@@ -49,6 +51,29 @@ class TestRectangle(unittest.TestCase):
     def test_rectangle_area(self):
         rectangle = Rectangle(3, 2)
         self.assertEqual(rectangle.area(), 6)
+
+    def setUp(self):
+        """function to redirect stdout to capture print"""
+        self.held, sys.stdout = sys.stdout, StringIO()
+
+    def tearDown(self):
+        """function to restore original stdout after test"""
+        sys.stdout = self.held
+
+    def test_rectangle_display_without_x_and_y(self):
+        rectangle = Rectangle(3, 2, 0, 0)
+        rectangle.display()
+        self.assertEqual(sys.stdout.getvalue(), "###\n###\n")
+
+    def test_display_without_y(self):
+        rect = Rectangle(3, 2, 2, 0)
+        rect.display()
+        self.assertEqual(sys.stdout.getvalue(), "  ###\n  ###\n")
+
+    def test_display(self):
+        rect = Rectangle(2, 4, 1, 2)
+        rect.display()
+        self.assertEqual(sys.stdout.getvalue(), "\n\n ##\n ##\n ##\n ##\n")
 
     def test_rectangle_str(self):
         rectangle = Rectangle(3, 2, 1, 0, 10)
