@@ -21,7 +21,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """Converts list of dictionaries to JSON string."""
         if not list_dictionaries:
-            return []
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
