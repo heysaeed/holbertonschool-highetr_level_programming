@@ -130,3 +130,12 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rectangle.height, 2)
         self.assertEqual(rectangle.x, 3)
         self.assertEqual(rectangle.y, 4)
+
+    def test_rectangle_save_to_file_none(self):
+        Rectangle.save_to_file(None)
+
+    def test_rectangle_save_to_file_empty(self):
+        Rectangle.save_to_file([])
+
+    def test_rectangle_save_to_file(self):
+        Rectangle.save_to_file([Rectangle(1, 2)])
