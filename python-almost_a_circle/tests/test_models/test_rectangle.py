@@ -6,7 +6,6 @@ import os
 from io import StringIO
 from models.rectangle import Rectangle
 
-"""Change order of attribute according to your own"""
 
 
 class TestRectangle(unittest.TestCase):
@@ -159,3 +158,33 @@ class TestRectangle(unittest.TestCase):
             file_read = file.read()
             expected_content = json.dumps([rectangle.to_dictionary()])
             self.assertEqual(json.loads(file_read), json.loads(expected_content))
+
+    @classmethod
+    def setUpClass(cls):
+        cls.filename = "Rectangle.json"
+
+    @classmethod
+    def tearDownClass(cls):
+        """Remove the file if it exists after tests."""
+        if os.path.exists(cls.filename):
+            os.remove(cls.filename)
+
+    def test_rectangle_load_from_file_nofile(self):
+        if os.path.exists(self.filename):
+            os.remove(self.filename)
+        result = Rectangle.load_from_file()
+        self.assertEqual(result, [])
+
+    def test_rectangle_load_from_file(self):
+        rectangles = [
+            {"id": 1, "width": 10, "height": 7, "x": 2, "y": 3},
+            {"id": 2, "width": 3, "height": 4, "x": 0, "y": 0}
+        ]
+        with open(self.filename, "w") as file:
+            file.write(Rectangle.to_json_string(rectangles))
+        loaded_file = Rectangle.load_from_file()
+        self.assertTrue(len(loaded_file) == len(rectangles))
+        for loaded_rectangle, expected_rectangle in zip(loaded_file, rectangles):
+            self.assertTrue(isinstance(loaded_rectangle, Rectangle))
+            for key in expected_rectangle:
+                self.assertEqual(getattr(loaded_rectangle,key), expected_rectangle[key])
