@@ -34,7 +34,7 @@ class TestBase(unittest.TestCase):
 
     def test_to_json_string_none(self):
         json_string = Base.to_json_string(None)
-        self.assertEqual(json_string, [])
+        self.assertEqual(json_string, "[]")
 
     def test_from_json_string(self):
         string = '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]'
