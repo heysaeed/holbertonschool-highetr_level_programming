@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import unittest
+import json
 import sys
+import os
 from io import StringIO
 from models.rectangle import Rectangle
 
@@ -55,10 +57,14 @@ class TestRectangle(unittest.TestCase):
     def setUp(self):
         """function to redirect stdout to capture print"""
         self.held, sys.stdout = sys.stdout, StringIO()
+        self.filename = "Rectangle.json"
 
     def tearDown(self):
         """function to restore original stdout after test"""
         sys.stdout = self.held
+        """Remove the file after the test to clean up."""
+        if os.path.exists(self.filename):
+            os.remove(self.filename)
 
     def test_rectangle_display_without_x_and_y(self):
         rectangle = Rectangle(3, 2, 0, 0)
@@ -133,9 +139,23 @@ class TestRectangle(unittest.TestCase):
 
     def test_rectangle_save_to_file_none(self):
         Rectangle.save_to_file(None)
+        self.assertTrue(os.path.exists(self.filename))
+        with open(self.filename, 'r') as file:
+            file_read = file.read()
+            self.assertEqual(file_read, "[]")
 
     def test_rectangle_save_to_file_empty(self):
         Rectangle.save_to_file([])
+        self.assertTrue(os.path.exists(self.filename))
+        with open(self.filename, 'r') as file:
+            file_read = file.read()
+            self.assertEqual(file_read, "[]")
 
     def test_rectangle_save_to_file(self):
-        Rectangle.save_to_file([Rectangle(1, 2)])
+        rectangle = Rectangle(1, 2)
+        Rectangle.save_to_file([rectangle])
+        self.assertTrue(os.path.exists(self.filename))
+        with open(self.filename, 'r') as file:
+            file_read = file.read()
+            expected_content = json.dumps([rectangle.to_dictionary()])
+            self.assertEqual(json.loads(file_read), json.loads(expected_content))
