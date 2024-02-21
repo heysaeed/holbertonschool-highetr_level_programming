@@ -99,3 +99,34 @@ class TestRectangle(unittest.TestCase):
         rectangle_dict = rectangle.to_dictionary()
         expected_dict = {'id': 10, 'width': 3, 'height': 2, 'x': 1, 'y': 0}
         self.assertEqual(rectangle_dict, expected_dict)
+
+    def test_rectangle_create_only_id(self):
+        rectangle = Rectangle.create(**{ 'id': 89})
+        self.assertEqual(rectangle.id, 89)
+        self.assertEqual(rectangle.x, 0)
+
+    def test_rectangle_create_id_width(self):
+        rectangle = Rectangle.create(**{ 'id': 89, 'width': 1})
+        self.assertEqual(rectangle.id, 89)
+        self.assertEqual(rectangle.width, 1)
+
+    def test_rectangle_create_id_width_height(self):
+        rectangle = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2})
+        self.assertEqual(rectangle.id, 89)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+
+    def test_rectangle_create_id_width_height_x(self):
+        rectangle = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3})
+        self.assertEqual(rectangle.id, 89)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+        self.assertEqual(rectangle.x, 3)
+
+    def test_rectangle_create_id_width_height_x_y(self):
+        rectangle = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
+        self.assertEqual(rectangle.id, 89)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+        self.assertEqual(rectangle.x, 3)
+        self.assertEqual(rectangle.y, 4)
