@@ -25,6 +25,15 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError) as err:
             rectangle = Rectangle("hello", 2, 3)
         self.assertEqual(str(err.exception), "width must be an integer")
+        with self.assertRaises(TypeError) as err1:
+            rectangle1 = Rectangle(1, "howdy", 3)
+        self.assertEqual(str(err1.exception), "height must be an integer")
+        with self.assertRaises(TypeError) as err2:
+            rectangle1 = Rectangle(1, 2, "hi")
+        self.assertEqual(str(err2.exception), "x must be an integer")
+        with self.assertRaises(TypeError) as err3:
+            rectangle1 = Rectangle(1, 2, 3, "sup'")
+        self.assertEqual(str(err3.exception), "y must be an integer")
 
     def test_rectangle_value_error(self):
         with self.assertRaises(ValueError) as err:
